@@ -1,25 +1,31 @@
-doctype html
+doctype HTML
 HTML
   head
     meta(charset='utf-8')
   body
-    form(action='/form_receiver' method='post') 
-      p
-        input(type='text' name='title')    
-      p
-        textarea( name='description')   
-      p 
-        input(type='submit')
+    h1 
+    a(href='/topic') Server Side JavaScript
+    ul
+      each topic in topics
+        li
+          a(href='/topic/'+topic)=topic
+    article
+      form(action='/topic' method='post')
+        p
+          input(type='text' name='title', placeholder='title')
+        P
+          textarea(name='description')
+        p
+          input(type='submit')
+            
           
+
 //input(type='text') : 텍스트를 입력(input)받는 태그
 //textarea : 입력을 여러 줄 하기 
-//p : 줄바꿈
+//p : 줄바꿈          
 
 // form 태그 안쪽에 입력된 정보들이 서버의 어디로 전송될 것인지 경로 작성. 
 // -> action='/form_receiver'
-
-//input 정보의 이름을 서버가 알 수 있어야 한다. -> name으로 이름 지정
-//form태그의 method 값을 생략하면? -> default값은 get이 된다.
 
 // method:post -> 데이터 전송 방법이 post면 url을 통해서 전송하는 방법이 아니라, 사용자 눈에 보이지 않는 방법으로 전송된다.
 // -> post방식이면 데이터가 전송되더라도 id, password입력이 url에 뜨지 않는다.

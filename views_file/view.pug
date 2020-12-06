@@ -1,0 +1,22 @@
+doctype HTML
+HTML
+  head
+    meta(charset='utf-8')
+  body
+    h1 
+    a(href='/topic') Server Side JavaScript
+    ul
+      each topic in topics
+        li
+          a(href='/topic/'+topic)=topic
+    article
+      h2=title
+      =description
+    div
+      a(href='/topic/new') new
+         
+// <a> : anchor. 정박지. 닻 - 혼자 사용하지 않고 다른 속성과 함께 사용
+// href : hypertext reference. 연결할 주소 지정하는 속성 href='' 따옴표를 빠뜨리지 말자
+
+// =topic : 변수의 값을 출력
+//article : 본문
